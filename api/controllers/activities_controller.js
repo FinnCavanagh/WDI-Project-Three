@@ -24,7 +24,7 @@ function activitiesCreate(req, res){
     place_id: req.body.place_id,
     url: req.body.url,
     user_id: req.user.id,
-    // group_id: req.user.id
+    group_id: req.group.id
     //We will set the user id using ajax
   });
   activity.save(function(err){
