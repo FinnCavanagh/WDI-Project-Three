@@ -123,7 +123,20 @@ margin: 0 auto;
   color: #fff;
 }
 
+#eventpic {
+  border-radius: 5px;
+  border: 2px solid #fff;;
+  padding: 20px; 
+  width: 100%;
+  height: 50%; 
+  margin-top: 10px;
 
+}
+
+#footertext {
+/*  text-align: center;*/
+color: #fff;
+}
 
 
 
