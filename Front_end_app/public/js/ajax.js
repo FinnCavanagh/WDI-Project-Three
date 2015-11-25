@@ -26,12 +26,12 @@ function checkLoginState(){
 
 function loggedInState(){
   //maybe slap this on the page
-  console.log("you logged in");
+
   var profile_picture = localStorage.getItem("profile_picture");
   $('.nav-wrapper img').attr('src', profile_picture);
   // getUsersGroups();
   ///THIS IS IMPORTANT 4 GERRY
-  console.log(currentUser);
+
   // var currentUser = 
 
 //set view for logged in
@@ -157,7 +157,7 @@ function getCurrentGroup(){
 function displayCurrentGroup(data){
 
   //display group info
-  console.log(data)
+
   getActivities()
 }
 
