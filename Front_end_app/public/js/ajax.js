@@ -104,6 +104,22 @@ function submitGroupForm(){
 }
 
 function submitActivityForm(){
+    event.preventDefault();
+
+    var method = $(this).attr("method");
+    var url    = "http://localhost:3000/api" + $(this).attr("action");
+    var data   = $(this).serialize();
+
+
+
+    ajaxRequest(method, url, data, displayCurrentActivity);
+    // console.log(data);
+    // console.log(currentUser.groups);
+    // // currentUser.groups.push(data._id);
+    // console.log(currentUser.groups);
+}
+
+function submitActivityForm(){
 
 }
 
@@ -139,7 +155,7 @@ function getCurrentGroup(){
 
 
 function displayCurrentGroup(data){
-  
+
   //display group info
   console.log(data)
   getActivities()
