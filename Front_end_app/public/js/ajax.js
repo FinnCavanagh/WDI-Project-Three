@@ -1,10 +1,9 @@
 $(init);
 
 var currentUser = null;
-var currentGroup = null;
 
 function init(){
-
+  console.log(currentGroup);
   $("#group_form").on("submit", submitGroupForm);
   $("#activity_form").on("submit", submitActivityForm);
 
@@ -157,13 +156,14 @@ function displayUsersInGroup(data){
 
 function getCurrentGroup(){
   return ajaxRequest("get", "http://localhost:3000/api/groups", null, function(){
-    currentGroup
+    
   })
 }
 
 
 function displayCurrentGroup(data){
-
+  console.log(data);
+  currentGroup = data.group;
   //display group info
 
   getActivities()
