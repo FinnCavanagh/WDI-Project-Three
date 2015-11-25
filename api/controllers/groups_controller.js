@@ -21,7 +21,7 @@ function groupsCreate(req, res){
     decision_expiry_time: req.body.decision_expiry_time,
     image: req.body.image,
     admin_user: req.user.id,
-    users: [req.user.id]
+    users: [req.user.id],
   });
   group.save(function(err){
     if(err) return res.render('error', {message: 'Could not create group ' + (err) });

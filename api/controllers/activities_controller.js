@@ -1,4 +1,5 @@
 var Activity = require('../models/activity');
+var Group = require('../models/group');
 
 function activitiesIndex(req, res){
   Activity.find(function(err, activities){
@@ -22,7 +23,8 @@ function activitiesCreate(req, res){
     image: req.body.image,
     place_id: req.body.place_id,
     url: req.body.url,
-    user_id: req.user.id
+    user_id: req.user.id,
+    // group_id: req.user.id
     //We will set the user id using ajax
   });
   activity.save(function(err){

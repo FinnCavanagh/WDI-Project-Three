@@ -1,10 +1,12 @@
 $(init);
 
 var currentUser = null;
+var currentGroup = null;
 
 function init(){
 
-  $("form").on("submit", submitGroupForm);
+  $("#group_form").on("submit", submitGroupForm);
+  $("#activity_form").on("submit", submitActivityForm);
 
 
 // checkLoginState(); 
@@ -104,6 +106,7 @@ function submitGroupForm(){
 }
 
 function submitActivityForm(){
+  console.log("submitActivityForm");
     event.preventDefault();
 
     var method = $(this).attr("method");
@@ -112,14 +115,19 @@ function submitActivityForm(){
 
 
 
-    ajaxRequest(method, url, data, displayCurrentActivity);
+    ajaxRequest(method, url, data, updateGroupActivity);
     // console.log(data);
     // console.log(currentUser.groups);
     // // currentUser.groups.push(data._id);
     // console.log(currentUser.groups);
 }
 
-function submitActivityForm(){
+function updateGroupActivity(data){
+  console.log("here");
+  console.log(data);
+}
+
+function displayCurrentActivity(data){
 
 }
 
@@ -149,7 +157,7 @@ function displayUsersInGroup(data){
 
 function getCurrentGroup(){
   return ajaxRequest("get", "http://localhost:3000/api/groups", null, function(){
-    
+    currentGroup
   })
 }
 

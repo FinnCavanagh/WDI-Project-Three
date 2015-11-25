@@ -10,7 +10,8 @@ var activitySchema = new mongoose.Schema({
   votes_count: Number,
   users_voted: [{ user_id : mongoose.Schema.Types.ObjectId , type: Number }],
   url: String,
-  user_id: [{type: mongoose.Schema.ObjectId, ref: 'User'}]
+  user_id: [{type: mongoose.Schema.ObjectId, ref: 'User'}],
+  group_id: [{type: mongoose.Schema.ObjectId, ref: 'Group'}]
 });
 
 module.exports = mongoose.model("Activity", activitySchema);
