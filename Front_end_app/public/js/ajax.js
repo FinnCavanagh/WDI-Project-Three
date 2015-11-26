@@ -148,10 +148,15 @@ function getCurrentGroup(){
 
 
 function displayCurrentGroup(data){
-  
+  console.log("data is", data)
   //display group info
-  console.log(data)
-  getActivities()
+  
+  ajaxRequest("get", "http://localhost:3000/api/groups/"+data.group._id, null, function(res){
+    console.log(res)
+    Views.render("/templates/group_page.html", res, "#container");
+  });
+  // Views.renderCollection("")
+  // getActivities()
 }
 
 function voteOnActivity(){
