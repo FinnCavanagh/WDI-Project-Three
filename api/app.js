@@ -22,7 +22,10 @@ var Activity       = require('./models/activity');
 var secret = process.env.PLANNERR_JWT_SECRET;
 
 //This will connect to the db when we figure out the location
-mongoose.connect('mongodb://localhost:27017/plannerr-app');
+
+var databaseURL = process.env.MONGOLAB_URI || 'mongodb://localhost:27017/plannerr-app'
+mongoose.connect(databaseURL);
+
 
 
 //This will require the passport file
@@ -52,7 +55,7 @@ app.use('/api', expressJWT({ secret: secret })
 var routes = require('./config/routes');
 app.use("/api", routes);
 
-app.listen(3000);
+app.listen(process.env.PORT || 3000);
 console.log("listening");
 
 app.get('/', function(req, res){

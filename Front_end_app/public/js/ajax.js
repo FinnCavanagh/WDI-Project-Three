@@ -16,7 +16,7 @@ function init(){
 
 function renderUserProfileView(user){
 
-  ajaxRequest("get", "http://localhost:3000/api/users/" + user._id, null, function(res){
+  ajaxRequest("get", "https://plannerr-api.herokuapp.com/api/users/" + user._id, null, function(res){
     event.preventDefault();
     console.log("rendering view profile");
     Views.render("/templates/user_page.html", res, "#container");
@@ -68,7 +68,7 @@ function newGroupForm(){
 }
 
 function onGroupCreate(){
-  ajaxRequest("POST", 'http://localhost:3000/api/groups', data, authenticationSuccessful);
+  ajaxRequest("POST", 'https://plannerr-api.herokuapp.com/groups', data, authenticationSuccessful);
 }
 
 
@@ -85,7 +85,7 @@ function submitGroupForm(){
     event.preventDefault();
 
     var method = $(this).attr("method");
-    var url    = "http://localhost:3000/api" + $(this).attr("action");
+    var url    = "https://plannerr-api.herokuapp.com" + $(this).attr("action");
     var data   = $(this).serialize();
 
 
@@ -128,7 +128,7 @@ function displayUsersInGroup(data){
 }
 
 function getCurrentGroup(){
-  return ajaxRequest("get", "http://localhost:3000/api/groups", null, function(){
+  return ajaxRequest("get", "https://plannerr-api.herokuapp.com/groups", null, function(){
     
   })
 }
@@ -143,7 +143,7 @@ function displayCurrentGroup(data){
   console.log("data is", data)
   //display group info
   
-  ajaxRequest("get", "http://localhost:3000/api/groups/"+data.group._id, null, function(res){
+  ajaxRequest("get", "https://plannerr-api.herokuapp.com/groups/"+data.group._id, null, function(res){
     console.log(res)
     Views.render("/templates/group_page.html", res, "#container");
   });

@@ -28,7 +28,7 @@ $(function(){
         data.facebook_id = facebook_id;
         data.profile_picture = res.picture.data.url;
 
-        return ajaxRequest("POST", 'http://localhost:3000/api/auth/facebook', data, authenticationSuccessful);
+        return ajaxRequest("POST", 'https://plannerr-api.herokuapp.com/api/auth/facebook', data, authenticationSuccessful);
       });
       $('.fb-logout').removeClass('hidden');
       $('.fb-login').addClass('hidden');
