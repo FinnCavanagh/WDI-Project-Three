@@ -8,7 +8,7 @@ function init(){
   $(".add-new-group").on("click", newGroupForm);
   $(".view-profile-page").on("click", renderUserProfileView);
   // Gareth Adding activity render
-  $("#container").on("click", ".add-activity", newActivityForm);
+  $("#container").on("click", ".add-activity-form", newActivityForm);
   // End Gareth Adding Activity render
 }
 
