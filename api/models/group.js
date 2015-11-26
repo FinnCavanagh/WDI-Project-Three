@@ -7,7 +7,6 @@ var groupSchema = new mongoose.Schema({
   decision_expiry_time: Date,
   image: String,
   admin_user: {type: mongoose.Schema.ObjectId, ref: 'User'},
-  activities: [Activity.schema],
   users: [{type: mongoose.Schema.ObjectId, ref: 'User'}]
 });
 
