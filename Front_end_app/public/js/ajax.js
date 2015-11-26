@@ -12,6 +12,11 @@ function init(){
   // End Gareth Adding Activity render
 }
 
+function renderUserProfileView(){
+  event.preventDefault();
+  console.log("rendering view profile");
+  Views.render("/templates/user_page.html", null, "#container");
+}
 
 function checkIfAdmin(){
 //checks to see if  a user is admin
